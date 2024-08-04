@@ -3,5 +3,7 @@
   І так само визначте змінну, яка може приймати тільки одне з двох рядкових значень: 'enable' або 'disable' (literal type)?
 */
 
-let union;
-let literal;
+type SwitchStatus = 'enable' | 'disable';
+
+let union: string | number;
+let literal: SwitchStatus;
