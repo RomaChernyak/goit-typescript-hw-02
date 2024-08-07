@@ -3,6 +3,8 @@
   і повертає boolean значення, що вказує, чи це день робочий чи вихідний.
 */
 
+// First method
+
 enum WeekdaysName {
   MONDAY,
   TUESDAY,
@@ -13,19 +15,20 @@ enum WeekdaysName {
   SUNDAY,
 }
 
-
-// Variable that containts a random weekday number (where 0 is Monday, and 6 is Sunday)
-// let randomIndex = Math.floor(Math.random() * 8);
-
-
-function isWorkday(day: number): boolean {
-  if (day > 4) {
-    return false
-  }
-
-  return true
+function isWorkday1(day: number): boolean {
+  return day <= 4;
 }
 
-isWorkday(WeekdaysName.MONDAY);
-isWorkday(WeekdaysName.THURSDAY);
-isWorkday(WeekdaysName.SATURDAY);
+isWorkday1(WeekdaysName.MONDAY);
+isWorkday1(WeekdaysName.THURSDAY);
+isWorkday1(WeekdaysName.SATURDAY);
+
+// Second method
+
+function isWorkday2(day: WeekdaysName): boolean {
+  return day !== WeekdaysName.SATURDAY && day !== WeekdaysName.SUNDAY
+}
+
+isWorkday2(WeekdaysName.TUESDAY);
+isWorkday2(WeekdaysName.THURSDAY);
+isWorkday2(WeekdaysName.SUNDAY);
