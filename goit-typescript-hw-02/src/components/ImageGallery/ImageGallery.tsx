@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ImageGalleryItem } from "components";
+import { ImageGalleryItem } from "../../components";
 import css from "./ImageGallery.module.css";
 
 export const ImageGallery = ({ images, showModal }) => {

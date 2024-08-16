@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Searchbar, ImageGallery, Button, Modal, Loader } from "components";
+import { Searchbar, ImageGallery, Button, Modal, Loader } from "../../components";
 import Notiflix from "notiflix";
 import { fetchImages } from "../../Services/pixabay-api";
 import css from "./App.module.css";
