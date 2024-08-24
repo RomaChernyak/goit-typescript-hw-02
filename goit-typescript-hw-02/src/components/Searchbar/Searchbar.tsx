@@ -1,10 +1,11 @@
+import { FormEvent } from "react";
 import Notiflix from "notiflix";
 import { FaSearch } from "react-icons/fa";
 import PropTypes from "prop-types";
 import css from "./Searchbar.module.css";
 
 export const Searchbar = ({ onSubmit }) => {
-    const handleFormSubmit = evt => {
+    const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
 
         const { value } = evt.currentTarget.elements[1];
