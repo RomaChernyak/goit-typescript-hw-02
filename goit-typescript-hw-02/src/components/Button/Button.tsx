@@ -1,8 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 import PropTypes from "prop-types";
 import css from "./Button.module.css";
 
-export const Button = ({ onLoadMore, text }) => {
+interface ButtonProps {
+    onLoadMore?: () => void;
+    text: string;
+};
+
+export const Button: FC<ButtonProps> = ({ onLoadMore, text }) => {
     return (
         <button
             className={css.button_loadmore}

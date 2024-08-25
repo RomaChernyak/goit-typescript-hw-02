@@ -61,6 +61,7 @@ export const App = () => {
 
       try {
         const response = await fetchImages(searchQuery, page);
+        const newPhotos: Images[] = response.hits;
         const total = response.totalHits;
         
         console.log(response);
@@ -71,7 +72,7 @@ export const App = () => {
           return Notiflix.Notify.failure("Sorry, no matches were identified with your query.");
         }
 
-        setImages(prevPhotos => [...prevPhotos, ...response.hits])
+        setImages(prevPhotos => [...prevPhotos, ...newPhotos])
         setTotal(response.totalHits)
         setLoadMore(page < Math.ceil(total / 12))
 
@@ -98,7 +99,7 @@ export const App = () => {
     setError(null);
   }
 
-  const onLoadMore = () => {
+  const onLoadMore = (): void => {
     setPage(prevPage => prevPage + 1);
   };
 
@@ -107,7 +108,7 @@ export const App = () => {
     setModalImage(largeImageURL);
   };
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setIsModalVisible(false);
   };
 
