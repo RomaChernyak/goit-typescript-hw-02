@@ -56,7 +56,7 @@ export const App = () => {
       return
     };
 
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
       setIsLoading(true);
 
       try {
